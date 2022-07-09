@@ -1,0 +1,59 @@
+h5,
+h3,
+p {
+    font-family: "Noto Nastaliq Urdu", serif;
+    text-align: right;
+}
+
+p {
+    font-size: 14px;
+}
+
+.newscard img {
+    border-radius: 5px;
+}
+
+
+.newscard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: height 1s;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    margin: 15px 6px;
+    overflow-x: hidden;
+    padding-bottom: 10px;
+}
+
+.news-head {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px;
+    align-items: center;
+}
+
+.info-time {
+    font-family: "Noto Nastaliq Urdu",
+    serif;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    font-size: 12px;
+}
+
+.info-source small {
+    padding: 3px 6px;
+    border: none;
+    border-radius: 10px;
+    font-size: 11px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

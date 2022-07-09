@@ -1,0 +1,332 @@
+{
+	"data": {
+        "papers": [
+            {
+                "name": "Express",
+                "cities": [
+                    "Lahore",
+                    "Karachi",
+                    "Islamabad",
+                    "Faisalabad",
+                    "Gujranwala",
+                    "Multan",
+                    "Peshawar",
+                    "Raheem Yar Khan",
+                    "Sargodha",
+                    "Sukkur",
+                    "Quetta"
+                ]
+            },
+            {
+                "name": "Naibaat",
+                "cities": [
+                    "Lahore",
+                    "Islamabad",
+                    "Peshawar",
+                    "Karachi",
+                    "Quetta",
+                    "Faisalabad",
+                    "Sargodha"
+                ]
+            },
+            {
+                "name": "Jang",
+                "cities": [
+                    "Lahore",
+                    "Rawalpindi",
+                    "Karachi",
+                    "Quetta",
+                    "Multan",
+                    "London"
+                ]
+            },
+            {
+                "name": "Mashriq",
+                "cities": ["Peshawar"]
+            },
+            {
+                "name": "AlAkhbar",
+                "cities": ["Islamabad"]
+            },
+            {
+                "name": "Islam",
+                "cities": ["Karachi", "Lahore"]
+            },
+            {
+                "name": "Ummat",
+                "cities": ["Peshawar", "Karachi", "Rawalpindi", "Hyderabad"]
+            },
+            {
+                "name": "Jasarat",
+                "cities": ["Islamabad", "Karachi", "Hyderabad"]
+            },
+            {
+                "name": "Dunya",
+                "cities": [
+                    "Islamabad",
+                    "Lahore",
+                    "Karachi",
+                    "Multan",
+                    "Faisalabad",
+                    "Gujranwala"
+                ]
+            },
+            {
+                "name": "Jinnah",
+                "cities": ["Islamabad", "Lahore", "Karachi", "Kashmir"]
+            },
+            {
+                "name": "Juraat",
+                "cities": ["Karachi"]
+            },
+            {
+                "name": "92",
+                "cities": [
+                    "Islamabad",
+                    "Karachi",
+                    "Lahore",
+                    "Peshawar",
+                    "Quetta",
+                    "Multan",
+                    "Sarghoda",
+                    "Faisalabad"
+                ]
+            },
+
+            {
+                "name": "Jehan-e-Pakistan",
+                "cities": [
+                    "Karachi",
+                    "Lahore",
+                    "Multan",
+                    "Islamabad",
+                    "Gujranwala"
+                ]
+            },
+            {
+                "name": "Khabrain",
+                "cities": [
+                    "Karachi",
+                    "Lahore",
+                    "Multan",
+                    "Islamabad",
+                    "Peshawar",
+                    "Muzaffarabad",
+                    "Bahawalpur"
+                ]
+            },
+            {
+                "name": "Nawai Waqt",
+                "cities": [
+                    "AJK",
+                    "Gawadar",
+                    "Gujranwala",
+                    "Islamabad",
+                    "Karachi",
+                    "Lahore",
+                    "Multan",
+                    "Quetta"
+                ]
+            },
+            {
+                "name": "Pakistan",
+                "cities": [
+                    "Karachi",
+                    "Lahore",
+                    "Multan",
+                    "Peshawar",
+                    "Rawalpindi"
+                ]
+            },
+            {
+                "name": "Pakistan Observer",
+                "cities": []
+            },
+            {
+                "name": "The Nation",
+                "cities": ["Karachi", "Lahore", "Gwadar", "Islamabad", "Quetta"]
+            }, {
+                "name": "K2",
+                "cities": ["Islamabad", "Karachi", "Gilgit Baltistan"]
+            },
+            {
+                "name": "Daily Patriot",
+                "cities": []
+            },
+            {
+                "name": "Business Recorder",
+                "cities": []
+            }
+        ],
+    
+        "urduPapers": [
+            {
+                "name": "روزنامہ ایکسپرس",
+                "cities": [
+                    "لاہور",
+                    "کراچی",
+                    "اسلام آباد",
+                    "فیصل آباد",
+                    "گجرانوالہ",
+                    "ملتان",
+                    "پشاور",
+                    "رحیم یار خان",
+                    "سرگودھا",
+                    "سکھر",
+                    "کوئٹہ"
+                ]
+            },
+            {
+                "name": "روزنامہ نئی بات",
+                "cities": [
+                    "لاہور",
+                    "اسلام آباد",
+                    "پشاور",
+                    "کراچی",
+                    "کوئٹہ",
+                    "فیصل آباد",
+                    "سرگودھا"
+                ]
+            },
+            {
+                "name": "روزناہ جنگ",
+                "cities": [
+                    "لاہور",
+                    "راولپنڈی",
+                    "کراچی",
+                    "کوئٹہ",
+                    "ملتان",
+                    "لندن"
+                ]
+            },
+            {
+                "name": "روزنامہ مشرق",
+                "cities": ["پشاور"]
+            },
+            {
+                "name": "روزنامہ الاخبار",
+                "cities": ["اسلام آباد"]
+            },
+            {
+                "name": "روزنامہ اسلام",
+                "cities": ["کراچی", "لاہور"]
+            },
+            {
+                "name": "روزنامہ امت",
+                "cities": ["پشاور", "کراچی", "راولپنڈی", "حیدرآباد"]
+            },
+            {
+                "name": "روزنامہ جسارت",
+                "cities": ["اسلام آباد", "کراچی", "حیدرآباد"]
+            },
+            {
+                "name": "روزنامہ دنیا",
+                "cities": [
+                    "اسلام آباد",
+                    "لاہور",
+                    "کراچی",
+                    "ملتان",
+                    "فیصل آباد",
+                    "گجرانوالہ"
+                ]
+            },
+            {
+                "name": "روزنامہ جناح",
+                "cities": ["اسلام آباد", "لاہور", "کراچی", "کشمیر"]
+            },
+            {
+                "name": "روزنامہ جرات",
+                "cities": ["جرات"]
+            },
+            {
+                "name": "روزنامہ 92",
+                "cities": [
+                    "اسلام آباد",
+                    "کراچی",
+                    "لاہور",
+                    "پشاور",
+                    "کوئٹہ",
+                    "ملتان",
+                    "سرگودھآ",
+                    "فیصل آباد"
+                ]
+            },
+
+            {
+                "name": "روزنامہ جہانِ پاکستان",
+                "cities": ["کراچی", "لاہور", "ملتان", "اسلام آباد", "گجرانوالہ"]
+            },
+            {
+                "name": "روزنامہ خبریں",
+                "cities": [
+                    "کراچی",
+                    "لاہور",
+                    "کراچی",
+                    "لاہور",
+                    "پشاور",
+                    "مظفرآباد",
+                    "بہاولپور"
+                ]
+            },
+            {
+                "name": "روزنامہ نواے وقت",
+                "cities": [
+                    "کشمیر",
+                    "گوادر",
+                    "گجرانوالہ",
+                    "اسلام آباد",
+                    "کراچی",
+                    "لاہور",
+                    "ملتان",
+                    "کوئٹہ"
+                ]
+            },
+            {
+                "name": "روزنامہ پاکستان",
+                "cities": ["کراچی", "لاہور", "ملتان", "پشاور", "راولپنڈی"]
+            },
+            {
+                "name": "Pakistan Observer",
+                "cities": []
+            },
+            {
+                "name": "دی نیشن",
+                "cities": ["کراچی", "لاہور", "گوادر", "اسلام آباد", "کوئٹہ"]
+            },
+            {
+                "name": "کے ٹو",
+                "cities": ["اسلام آباد", "کراچی", "گلگت بلتستان"]
+            },
+            {
+                "name": "Daily Patriot",
+                "cities": []
+            },
+            {
+                "name": "Business Recorder",
+                "cities": []
+            }
+        ],
+        
+        "mags" : [
+            "Mashriq Magazine",
+            "92 Magazine",
+            "Khabrain Magazine",
+            "Zindagi",
+            "Phool",
+            "Nidai Millat",
+            "Family",
+            "Nawai Waqt Sunday Magazine"
+        ],
+    
+        "urduMags" : [
+            "مشرق میگزین",
+            "92 میگزین",
+            "خبریں میگزین",
+            "زندگی میگزین",
+            "پھول میگزین",
+            "نداے ملت",
+            "فیملی",
+            "نواے وقت میگزین"
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: 'Noto Nastaliq Urdu',
+    serif;
+    align-items: center;
+    height: 50vh;
+}
+
+.main-menu a {
+    color: #fff;
+    background-color: #0f0f0f;
+    border: 2px solid transparent;
+    border-radius: 200px;
+    width: 180px;
+    text-decoration: none;
+    text-align: center;
+    padding: 2px;
+    padding-bottom:5px;
+    transition: background-color .33s;
+}
+
+.main-menu a:hover {
+    background-color: #fff;
+    color: #0f0f0f;
+    border: 2px solid #0f0f0f;
+}

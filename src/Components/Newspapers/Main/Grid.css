@@ -1,0 +1,51 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    max-width: 500px;
+}
+
+.grid a {
+    text-decoration: none;
+    font-size: 16px;
+    background-color: white;
+    color: #0f0f0f;
+    border: 2px solid #0f0f0f;
+    border-radius: 20px;
+    transition: all .25s;
+    font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+.grid a:hover, .grid a:active {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+.not-found {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.not-found h2 {
+    color: #0f0f0f;
+    border-bottom: 4px solid #0f0f0f;
+    display: inline-block;
+}
+
+.paper-name {
+    text-align: center;
+}
+
+.paper-name h3 {
+    display: inline-block;
+    color: #0f0f0f;
+    border-bottom: 4px solid red;
+
+}

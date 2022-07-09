@@ -1,0 +1,33 @@
+.menu a {
+    color: white;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 3px;
+    padding: 2px 4px 2px 4px;
+    font-size: 14px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu {
+    background-color: #0f0f0f;
+    color: white;
+    border-bottom: 3px solid red;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+}
+
+.menu .active {
+    background-color: white;
+    color: #0f0f0f !important;
+    font-weight: bold;
+    border: 3px solid transparent;
+    border-top: 3px solid #0f0f0f;
+    border-bottom: 3px solid #0f0f0f;
+    border-radius: 15px;
+    font-size: 14px;
+}

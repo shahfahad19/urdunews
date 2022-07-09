@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+
+
+.logo {
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  border-top: 4px solid red;
+}
+
+.logo .urdu {
+  color: red;
+}
+
+.top-menu {
+  font-family: 'Noto Nastaliq Urdu';
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  margin-bottom: 5px;
+}
+
+.top-menu a {
+  text-decoration: none;
+  color: #0f0f0f;
+  padding-bottom: 2px;
+  width: 120px;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+}
+
+
+.top-menu .active {
+  background-color: #0f0f0f;
+  color: white;
+
+}
+
+.pagination .active {
+  background-color: rgb(206, 206, 206);
+  height: 22px;
+  width: 22px;
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination a {
+  color: black;
+  background-color: rgb(230, 230, 230);
+  border: none;
+  border-radius: 50%;
+  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  height: 20px;
+  width: 20px;
+}
