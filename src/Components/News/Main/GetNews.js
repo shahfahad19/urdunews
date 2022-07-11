@@ -25,9 +25,7 @@ const GetNews = (props) => {
 
             if (mounted.current) {
                 let data = await sendRequest(
-                    "http://167.172.82.64:80/api/v1/news?sort=-updatedAt&categories=" +
-                        type +
-                        "&page=1&limit=60"
+                    "https://urdunewsapi.vercel.app/?cat=" + type
                 );
                 localStorage.setItem(type + "_News_Urdu", data);
                 if (news !== data && mounted.current) {
@@ -44,7 +42,6 @@ const GetNews = (props) => {
             return new Promise(function (resolve, reject) {
                 let xhr = new XMLHttpRequest();
                 xhr.open("GET", url);
-                xhr.setRequestHeader("authorization", "Basic a2V5OjIyMzM0NDEx");
                 xhr.onload = function () {
                     if (this.status >= 200 && this.status < 300) {
                         resolve(xhr.response);
