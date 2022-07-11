@@ -1,11 +1,11 @@
 // Choose a cache name
-const cacheName = "urdu-news-cache-v3";
+const cacheName = "urdu-news-cache-v2";
 // List the files to precache
 const precacheResources = [
     "/",
     "/index.html",
-    "/static/js/main.c1e18da3.js",
     "/static/css/main.7f2c2f2c.css",
+    "/static/js/main.db6c3a15.js",
     "/images/icons/icon-128x128.png",
     "/images/icons/icon-144x144.png",
     "/images/icons/icon-152x152.png",

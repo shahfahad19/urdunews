@@ -25,8 +25,9 @@ const GetNews = (props) => {
 
             if (mounted.current) {
                 let data = await sendRequest(
-                    "https://api.codetabs.com/v1/proxy?quest=https://pakpapers.tk/news.php?cat=" +
-                        type
+                    "http://167.172.82.64:80/api/v1/news?sort=-updatedAt&categories=" +
+                        type +
+                        "&page=1&limit=60"
                 );
                 localStorage.setItem(type + "_News_Urdu", data);
                 if (news !== data && mounted.current) {
@@ -43,6 +44,7 @@ const GetNews = (props) => {
             return new Promise(function (resolve, reject) {
                 let xhr = new XMLHttpRequest();
                 xhr.open("GET", url);
+                xhr.setRequestHeader("authorization", "Basic a2V5OjIyMzM0NDEx");
                 xhr.onload = function () {
                     if (this.status >= 200 && this.status < 300) {
                         resolve(xhr.response);
