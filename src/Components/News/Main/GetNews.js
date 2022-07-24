@@ -25,7 +25,7 @@ const GetNews = (props) => {
 
             if (mounted.current) {
                 let data = await sendRequest(
-                    "https://urdunewsapi.vercel.app/?cat=" + type
+                    "https://urdunewsapi.vercel.app/news?cat=" + type
                 );
                 localStorage.setItem(type + "_News_Urdu", data);
                 if (news !== data && mounted.current) {
