@@ -18,7 +18,7 @@ const GetNews = (props) => {
             try {
                 news = localStorage.getItem(type + "_News_Urdu");
                 let data = JSON.parse(news);
-                setNews(data.data);
+                setNews(data);
             } catch {
                 setNews([]);
             }
