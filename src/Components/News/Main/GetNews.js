@@ -30,7 +30,7 @@ const GetNews = (props) => {
                 localStorage.setItem(type + "_News_Urdu", data);
                 if (news !== data && mounted.current) {
                     data = JSON.parse(data);
-                    setNews(data.data);
+                    setNews(data);
                     window.scrollTo(0, 0);
                 }
             }
