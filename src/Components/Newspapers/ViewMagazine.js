@@ -76,7 +76,6 @@ const ViewMagazine = (props) => {
 
     const changeDate = (inputDate) => {
         let iDate = inputDate.split("-");
-        //console.log(iDate);
         setDate(`${iDate[2]}-${iDate[1]}-${iDate[0]}`);
     };
 
