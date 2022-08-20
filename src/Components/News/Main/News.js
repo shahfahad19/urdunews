@@ -10,7 +10,7 @@ const News = (props) => {
         imgHeight: "80px",
         imgWidth: "100px",
         objectFit: "cover",
-        titleSize: "14px",
+        titleSize: "14px"
     };
     const [styles, setStyles] = useState(defaultStyles);
 
@@ -46,6 +46,7 @@ const News = (props) => {
     if (src === "BBCNews") color = "#992712";
     if (src === "ExpressNews") color = "#C5351A";
     if (src === "DunyaNews") color = "#425AD9";
+    if (src === "SamaaNews") color = "#283786";
 
     const clickHandler = () => {
         if (details) {
@@ -59,10 +60,9 @@ const News = (props) => {
                 imgHeight: "auto",
                 imgWidth: "100%",
                 objectFit: "contain",
-                titleSize: "16px",
+                titleSize: "16px"
             });
         }
-        console.log(news);
     };
     return (
         <>
@@ -81,13 +81,13 @@ const News = (props) => {
                         style={{
                             height: styles.imgHeight,
                             width: styles.imgWidth,
-                            objectFit: styles.objectFit,
+                            objectFit: styles.objectFit
                         }}
                     />
                     <p
                         style={{
                             marginRight: "10px",
-                            fontSize: styles.titleSize,
+                            fontSize: styles.titleSize
                         }}
                     >
                         {news.title}
@@ -116,7 +116,7 @@ const News = (props) => {
                         <p
                             style={{
                                 fontSize: "14px",
-                                margin: "0px 5px 0px 5px",
+                                margin: "0px 5px 0px 5px"
                             }}
                         >
                             {news.summary}

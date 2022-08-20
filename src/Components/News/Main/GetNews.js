@@ -14,28 +14,27 @@ const GetNews = (props) => {
 
         async function getNews() {
             window.scrollTo(0, 0);
-            let news;
+            let newsSaved;
             try {
-                news = localStorage.getItem(type + "_News_Urdu");
-                let data = JSON.parse(news);
-                setNews(data);
+                newsSaved = localStorage.getItem(type + "_urdunews");
+                let data = JSON.parse(newsSaved);
+                if (mounted.current) setNews(data);
             } catch {
                 setNews([]);
             }
 
             if (mounted.current) {
                 let data = await sendRequest(
-                    "https://urdunewsapi.vercel.app/news?cat=" + type+"&n=80"
+                    `https://urdunewsapi.vercel.app/news?cat=${type}&n=100`
                 );
                 localStorage.setItem(type + "_urdunews", data);
-                if (news !== data && mounted.current) {
+                if (newsSaved !== data && mounted.current) {
                     data = JSON.parse(data);
                     setNews(data);
                     window.scrollTo(0, 0);
                 }
             }
-
-            isUpdated(true);
+            if (mounted.current) isUpdated(true);
         }
 
         function sendRequest(url) {
@@ -59,7 +58,9 @@ const GetNews = (props) => {
 
     return (
         <div>
-            {news.length < 1 && <Message msg="...خبریں لوڈ ہو رہی ہیں" />}
+            {mounted.current && news.length < 1 && (
+                <Message msg="...خبریں لوڈ ہو رہی ہیں" />
+            )}
             {!updated && (
                 <center style={{ fontFamily: `"Noto Nastaliq Urdu", serif` }}>
                     <small> نئی خبریں لوڈ ہو رہی ہیں</small>
