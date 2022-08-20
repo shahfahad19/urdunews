@@ -14,7 +14,7 @@ const News = (props) => {
     };
     const [styles, setStyles] = useState(defaultStyles);
 
-    const date = new Date(news.createdAt).getTime();
+    const date = new Date(news.time).getTime();
 
     const dateNow = new Date().getTime();
     const n = 86400000;
