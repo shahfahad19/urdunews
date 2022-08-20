@@ -4,7 +4,7 @@ import News from "./News";
 
 const GetNews = (props) => {
     const mounted = useRef(false);
-    const [news, setNews] = useState([]);
+    const [news, setNews] = useState(["test"]);
     const [updated, isUpdated] = useState(false);
 
     const type = props.type;
@@ -58,7 +58,7 @@ const GetNews = (props) => {
 
     return (
         <div>
-            {mounted.current && news.length < 1 && (
+            {mounted.current && news.length < 10 && (
                 <Message msg="...خبریں لوڈ ہو رہی ہیں" />
             )}
             {!updated && (
@@ -66,7 +66,7 @@ const GetNews = (props) => {
                     <small> نئی خبریں لوڈ ہو رہی ہیں</small>
                 </center>
             )}
-            {news.map((news, index) => (
+            {news.length > 20 && news.map((news, index) => (
                 <News key={index} news={news} />
             ))}
         </div>
