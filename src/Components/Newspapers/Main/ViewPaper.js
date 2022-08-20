@@ -1,142 +1,127 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
-import Alakhbar from "../PapersList/Alakhbar";
-import PakObserver from "../PapersList/PakObserver";
-import Dunya from "../PapersList/Dunya";
-import Express from "../PapersList/Express";
-import Is from "../PapersList/Is";
-import Jang from "../PapersList/Jang";
-import Jasarat from "../PapersList/Jasarat";
-import JehanPakistan from "../PapersList/JehanPakistan";
-import Jinnah from "../PapersList/Jinnah";
-import Juraat from "../PapersList/Juraat";
-import Khabrain from "../PapersList/Khabrain";
-import Mashriq from "../PapersList/Mashriq";
-import Naibaat from "../PapersList/Naibaat";
-import NawaiWaqt from "../PapersList/NawaiWaqt";
-import NtNews from "../PapersList/NtNews";
-import Pakistan from "../PapersList/Pakistan";
-import TheNation from "../PapersList/TheNation";
-import Ummat from "../PapersList/Ummat";
 import Message from "./Message";
-import K2 from "../PapersList/K2";
-import Patriot from "../PapersList/Patriot";
-import BRecoder from "../PapersList/BRecoder";
+import Image from "./Image";
+
 const ViewPaper = (props) => {
-	const papers = props.papers;
-	const cities = props.cities;
-	const date = new Date();
-	const year = date.getFullYear();
-	let month = date.getMonth() + 1;
-	let day = date.getDate();
-	const nday = date.getDay();
-	month = month < 10 ? "0" + month : month;
-	day = day < 10 ? "0" + day : day;
-	const fullDate = {
-		day: day,
-		nday: nday,
-		month: month,
-		year: year
-	};
-	const params = useParams();
-	const paper = params.paper;
-	let errorType = 0;
-	let paperCities = [],
-		cityIndex;
-	const paperIndex = papers.indexOf(params.paper);
-	if (paperIndex !== -1) {
-		paperCities = cities[paperIndex];
-		cityIndex = paperCities.cities.indexOf(params.city);
-	}
-	let paperName, cityName;
+    const params = useParams();
+    let mounted = useRef(false);
+    const [errorType, setError] = useState(0);
+    const [avail, setAvail] = useState([]);
+    const [paper, setPaper] = useState({ images: [] });
 
-	if (paperIndex === -1) {
-		errorType = "paper404";
-	} else if (
-		paperIndex !== -1 &&
-		cityIndex === -1 &&
-		paperCities.length > 0
-	) {
-		errorType = "city404";
-	} else {
-		paperName = props.urduCities[paperIndex].name;
-		cityName = props.urduCities[paperIndex].cities[cityIndex];
-	}
+    //const [paper, setPaper] = useState({});
+    useEffect(() => {
+        mounted.current = true;
+        const papers = props.papers;
+        const cities = props.cities;
 
-	return (
-		<>
-			{errorType === 0 ? (
-				<>
-					<h3
-						style={{
-							textAlign: "center",
-							color: "#0f0f0f",
-							borderTop: "3px solid red",
-							alignSelf: "center"
-						}}
-					>
-						{paperIndex !== -1 &&
-							cityIndex !== -1 &&
-							`${paperName} (${cityName})`}
-					</h3>
-					{paper === "Express" && (
-						<Express city={params.city} date={fullDate} />
-					)}
-					{paper === "Naibaat" && (
-						<Naibaat city={params.city} date={fullDate} />
-					)}
-					{paper === "Mashriq" && (
-						<Mashriq city={params.city} date={fullDate} />
-					)}
-					{paper === "Jasarat" && (
-						<Jasarat city={params.city} date={fullDate} />
-					)}
-					{paper === "Juraat" && (
-						<Juraat city={params.city} date={fullDate} />
-					)}
-					{paper === "Dunya" && (
-						<Dunya city={params.city} date={fullDate} />
-					)}
-					{paper === "Islam" && (
-						<Is city={params.city} date={fullDate} />
-					)}
-					{paper === "Pakistan" && <Pakistan city={params.city} />}
-					{paper === "Nawai Waqt" && <NawaiWaqt city={params.city} />}
-					{paper === "Jinnah" && (
-						<Jinnah city={params.city} date={fullDate} />
-					)}
-					{paper === "Ummat" && (
-						<Ummat city={params.city} date={fullDate} />
-					)}
-					{paper === "NtNews" && (
-						<NtNews city={params.city} date={fullDate} />
-					)}
-					{paper === "Khabrain" && <Khabrain city={params.city} />}
-					{paper === "The Nation" && (
-						<TheNation city={params.city} date={fullDate} />
-					)}
-					{paper === "92" && <NtNews city={params.city} />}
-					{paper === "AlAkhbar" && (
-						<Alakhbar city={params.city} date={fullDate} />
-					)}
-					{paper === "Jehan-e-Pakistan" && (
-						<JehanPakistan city={params.city} date={fullDate} />
-					)}
-					{paper === "Jang" && <Jang city={params.city} />}
-					{paper === "Pakistan Observer" && (
-						<PakObserver city={params.city} />
-					)}
-					{paper === "K2" && <K2 city={params.city} />}
-					{paper === "Daily Patriot" && <Patriot />}
-					{paper === "Business Recorder" && (
-						<BRecoder date={fullDate} />
-					)}
-				</>
-			) : (
-				<Message msg={errorType} />
-			)}
-		</>
-	);
+        let paperCities = [],
+            cityIndex;
+        const paperIndex = papers.indexOf(params.paper);
+        let link = "";
+        if (paperIndex !== -1) {
+            paperCities = cities[paperIndex];
+            cityIndex = paperCities.cities.indexOf(params.city);
+            link =
+                "https://urdunewsapi.herokuapp.com/np/" +
+                cities[paperIndex].shortname +
+                "/" +
+                params.city;
+        }
+        let paperName, cityName;
+
+        if (paperIndex === -1) {
+            setError("paper404");
+        } else if (
+            paperIndex !== -1 &&
+            cityIndex === -1 &&
+            paperCities.length > 0
+        ) {
+            errorType = "city404";
+        } else {
+            setError(0);
+            paperName = props.urduCities[paperIndex].name;
+            cityName = props.urduCities[paperIndex].cities[cityIndex];
+            setAvail([paperName, cityName]);
+        }
+        if (paperIndex !== -1) {
+            paperCities = cities[paperIndex];
+            cityIndex = paperCities.cities.indexOf(params.city);
+            link =
+                "https://urdunewsapi.herokuapp.com/np/" +
+                cities[paperIndex].shortname +
+                "/" +
+                params.city;
+        }
+
+        async function getNews(url) {
+            window.scrollTo(0, 0);
+            if (mounted.current) {
+                let data = await sendRequest(url);
+
+                if (mounted.current) {
+                    data = JSON.parse(data);
+                    setPaper(data);
+                }
+            }
+        }
+
+        function sendRequest(url) {
+            return new Promise(function (resolve, reject) {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", url);
+                xhr.onload = function () {
+                    if (this.status >= 200 && this.status < 300) {
+                        resolve(xhr.response);
+                    }
+                };
+                xhr.send();
+            });
+        }
+
+        if (mounted.current && paperIndex > -1 && cityIndex > -1) {
+            getNews(link);
+        }
+
+        return () => {
+            mounted.current = false;
+        };
+    }, [props]);
+
+    return (
+        <>
+            {errorType === 0 && (
+                <>
+                    <h3
+                        style={{
+                            textAlign: "center",
+                            color: "#0f0f0f",
+                            borderTop: "3px solid red",
+                            alignSelf: "center"
+                        }}
+                    >
+                        {avail.length > 0 && `${avail[0]} (${avail[1]})`}
+                    </h3>
+                    <div className="date">
+                        <div style={{ fontFamily: "Arial" }}>
+                            {paper.images.length > 0 && paper.date}
+                        </div>
+                        <div>
+                            Select Date:&nbsp;
+                            <input type="date" />
+                        </div>
+                    </div>
+
+                    {paper.images.length > 0 &&
+                        paper.images.map((link, index) => {
+                            return <Image src={link} key={index} />;
+                        })}
+                </>
+            )}
+            {errorType !== 0 && <Message msg={errorType} />}
+        </>
+    );
 };
 
 export default ViewPaper;

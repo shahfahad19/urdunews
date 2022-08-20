@@ -32,18 +32,9 @@ function App() {
     useEffect(() => {}, [location]);
     useEffect(() => {
         async function getNews() {
-            let getData = await sendRequest("/res/data.json");
-            let data = JSON.parse(getData).data;
-            data.papers.sort(
-                sort_by("cities", false, function (a) {
-                    return a.length;
-                })
-            );
-            data.urduPapers.sort(
-                sort_by("cities", false, function (a) {
-                    return a.length;
-                })
-            );
+            let getData = await sendRequest("http://localhost:5000/webapi");
+            let data = JSON.parse(getData);
+
             let papersList = [];
             let urduPapersList = [];
             for (let i = 0; i < data.papers.length; i++)
@@ -57,18 +48,6 @@ function App() {
 
             setData(data);
         }
-
-        var sort_by = function (field, reverse, primer) {
-            var key = function (x) {
-                return primer ? primer(x[field]) : x[field];
-            };
-
-            return function (a, b) {
-                var A = key(a),
-                    B = key(b);
-                return (A < B ? -1 : A > B ? 1 : 0) * [-1, 1][+!!reverse];
-            };
-        };
 
         function sendRequest(url) {
             return new Promise(function (resolve, reject) {
