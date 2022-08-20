@@ -1,7 +1,7 @@
 // Choose a cache name
-const cacheName = "urdu-news-cache-v4";
+const cacheName = "urdu-news-cache-v5";
 // List the files to precache
-const precacheResources = ["/"];
+const precacheResources = [];
 
 // When the service worker is installing, open the cache and add the precache resources to it
 self.addEventListener("install", (event) => {
