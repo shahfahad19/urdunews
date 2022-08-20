@@ -32,8 +32,6 @@
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-evenly;
-  position: sticky;
-  top: 0px
 }
 
 .top-menu .active {
