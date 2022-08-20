@@ -32,7 +32,7 @@ function App() {
     useEffect(() => {}, [location]);
     useEffect(() => {
         async function getNews() {
-            let getData = await sendRequest("http://localhost:5000/webapi");
+            let getData = await sendRequest("https://urdunewsapi.vercel.app/webapi");
             let data = JSON.parse(getData);
 
             let papersList = [];
