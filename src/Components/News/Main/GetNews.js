@@ -25,12 +25,12 @@ const GetNews = (props) => {
 
             if (mounted.current) {
                 let data = await sendRequest(
-                    "https://urdunewsapi.vercel.app/news?cat=" + type
+                    "https://urdunewsapi.vercel.app/news?cat=" + type+"&n=80"
                 );
-                localStorage.setItem(type + "_News_Urdu", data);
+                localStorage.setItem(type + "_urdunews", data);
                 if (news !== data && mounted.current) {
                     data = JSON.parse(data);
-                    setNews(data.data);
+                    setNews(data);
                     window.scrollTo(0, 0);
                 }
             }
