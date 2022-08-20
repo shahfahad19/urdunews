@@ -1,12 +1,11 @@
 // Choose a cache name
-const cacheName = "urdu-news-cache-v2";
+const cacheName = "urdu-news-cache-v4";
 // List the files to precache
 const precacheResources = [
-    "/",
-    "/images/icons/icon-128x128.png",
-    "/images/icons/icon-192x192.png",
-    "/images/icons/icon-384x384.png",
-    "/images/icons/icon-512x512.png",
+    "./images/icons/icon-128x128.png",
+    "./images/icons/icon-192x192.png",
+    "./images/icons/icon-384x384.png",
+    "./images/icons/icon-512x512.png",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
