@@ -46,12 +46,40 @@
 .paper-name h3 {
     display: inline-block;
     color: #0f0f0f;
-    border-bottom: 4px solid red;
-
 }
 
 .date {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-weight: bold;
+    background-color: #0f0f0f;
+    margin: 0px 0px 10px 5px;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    padding: 5px 20px 5px 10px;
+}
+
+
+.date input {
+    font-weight: bold;
+}
+
+
+
+
+@media only screen and (max-device-width: 380px) {
+    .date {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 2px;
+        font-size: 14px;
+    }
+}
+
+h3 {
+  font-family: 'Noto Nastaliq Urdu', serif;
+    text-align: center;
+    color: "#0f0f0f"
+}
+@media screen {
+    
 }

@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 export const NewsDetails = (props) => {
     const newsDetails = props.data;
-    console.log(newsDetails);
+    //////console.log(newsDetails);
     return (
         <React.Fragment>
             {ReactDOM.createPortal(

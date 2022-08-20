@@ -1,11 +1,10 @@
 import { NavLink, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
-import Filter from "./Components/Newspapers/Main/Filter";
-import MagList from "./Components/Newspapers/Main/MagList";
-import PapersList from "./Components/Newspapers/Main/PapersList";
-import ViewMagazine from "./Components/Newspapers/Main/ViewMagazine";
-import ViewPaper from "./Components/Newspapers/Main/ViewPaper";
-import CitiesList from "./Components/Newspapers/Main/CitiesList";
+import MagList from "./Components/Newspapers/MagList";
+import PapersList from "./Components/Newspapers/PapersList";
+import ViewMagazine from "./Components/Newspapers/ViewMagazine";
+import ViewPaper from "./Components/Newspapers/ViewPaper";
+import CitiesList from "./Components/Newspapers/CitiesList";
 import Menu from "./Components/News/Main/Menu";
 import PakistanNews from "./Components/News/Types/PakistanNews";
 import Business from "./Components/News/Types/Business";
@@ -13,9 +12,8 @@ import Sports from "./Components/News/Types/Sports";
 import Other from "./Components/News/Types/Other";
 import Regional from "./Components/News/Types/Regional";
 import International from "./Components/News/Types/International";
-import Message from "./Components/Newspapers/Main/Message";
+import Message from "./Components/Newspapers/Message";
 import { Redirect } from "./Components/Main/Redirect";
-import { MainMenu } from "./Components/Main/MainMenu";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -32,7 +30,9 @@ function App() {
     useEffect(() => {}, [location]);
     useEffect(() => {
         async function getNews() {
-            let getData = await sendRequest("https://urdunewsapi.vercel.app/webapi");
+            let getData = await sendRequest(
+                "https://urdunewsapi.vercel.app/webapi"
+            );
             let data = JSON.parse(getData);
 
             let papersList = [];
@@ -78,6 +78,9 @@ function App() {
                     <NavLink to="/newspapers" activeclassname="active">
                         اخبارات
                     </NavLink>
+                    <NavLink to="/magazines" activeclassname="active">
+                        میگزینز
+                    </NavLink>
                 </div>
             )}
 
@@ -86,23 +89,14 @@ function App() {
                     path=""
                     element={
                         <>
-                            <MainMenu />
+                            <Redirect to="news" />
                         </>
                     }
                 />
                 <Route
-                    path="/newspapers"
+                    path="newspapers"
                     element={
                         <>
-                            <Redirect to="/newspapers/papers" />
-                        </>
-                    }
-                />
-                <Route
-                    path="newspapers/papers"
-                    element={
-                        <>
-                            <Filter />
                             <PapersList
                                 paperlist={data.papers}
                                 urduPapers={data.urduPapersList}
@@ -111,10 +105,9 @@ function App() {
                     }
                 />
                 <Route
-                    path="newspapers/magazines"
+                    path="magazines"
                     element={
                         <>
-                            <Filter />
                             <MagList
                                 maglist={data.mags}
                                 urdumaglist={data.urduMags}
@@ -125,7 +118,7 @@ function App() {
 
                 <Route
                     exact
-                    path="newspapers/magazines/:magname"
+                    path="magazines/:magname"
                     element={
                         <ViewMagazine
                             maglist={data.mags}
@@ -135,7 +128,7 @@ function App() {
                 />
                 <Route
                     exact
-                    path="newspapers/papers/:paper/:city"
+                    path="newspapers/:paper/:city"
                     element={
                         <ViewPaper
                             papers={data.papersList}
@@ -146,10 +139,9 @@ function App() {
                 />
                 <Route
                     exact
-                    path="newspapers/papers/:paper"
+                    path="newspapers/:paper"
                     element={
                         <>
-                            <Filter />
                             <CitiesList data={data} />
                         </>
                     }

@@ -10,7 +10,17 @@ const ViewPaper = (props) => {
     const [avail, setAvail] = useState([]);
     const [paper, setPaper] = useState({ images: [] });
 
-    //const [paper, setPaper] = useState({});
+    const dateObj = new Date();
+    const year = dateObj.getFullYear();
+    let month = dateObj.getMonth() + 1;
+    let day = dateObj.getDate();
+    month = month < 10 ? "0" + month : month;
+    day = day < 10 ? "0" + day : day;
+
+    const maxdate = `${year}-${month}-${day}`;
+    let inDate = useRef(maxdate);
+    const [date, setDate] = useState("");
+
     useEffect(() => {
         mounted.current = true;
         const papers = props.papers;
@@ -62,6 +72,8 @@ const ViewPaper = (props) => {
 
                 if (mounted.current) {
                     data = JSON.parse(data);
+                    let d = data.date.split("-");
+                    inDate.current = d[2] + "-" + d[1] + "-" + d[0];
                     setPaper(data);
                 }
             }
@@ -81,42 +93,53 @@ const ViewPaper = (props) => {
         }
 
         if (mounted.current && paperIndex > -1 && cityIndex > -1) {
+            link = date === "" ? link : link + "?date=" + date;
             getNews(link);
+            setPaper({ images: [] });
         }
 
         return () => {
             mounted.current = false;
         };
-    }, [props]);
+    }, [props, date]);
+
+    const changeDate = (inputDate) => {
+        let iDate = inputDate.split("-");
+        //console.log(iDate);
+        setDate(`${iDate[2]}-${iDate[1]}-${iDate[0]}`);
+    };
 
     return (
         <>
             {errorType === 0 && (
                 <>
-                    <h3
-                        style={{
-                            textAlign: "center",
-                            color: "#0f0f0f",
-                            borderTop: "3px solid red",
-                            alignSelf: "center"
-                        }}
-                    >
-                        {avail.length > 0 && `${avail[0]} (${avail[1]})`}
-                    </h3>
-                    <div className="date">
-                        <div style={{ fontFamily: "Arial" }}>
-                            {paper.images.length > 0 && paper.date}
-                        </div>
-                        <div>
-                            Select Date:&nbsp;
-                            <input type="date" />
-                        </div>
-                    </div>
+                    {avail.length > 0 && (
+                        <>
+                            <h3>
+                                {avail[0]} &nbsp;({avail[1]})
+                            </h3>
+                            {paper.images.length > 0 && (
+                                <div className="date">
+                                    Date:&nbsp;
+                                    <input
+                                        type="date"
+                                        max={maxdate}
+                                        value={inDate.current}
+                                        onChange={(event) => {
+                                            changeDate(event.target.value);
+                                            inDate.current = event.target.value;
+                                        }}
+                                    />
+                                </div>
+                            )}
+                        </>
+                    )}
 
                     {paper.images.length > 0 &&
                         paper.images.map((link, index) => {
                             return <Image src={link} key={index} />;
                         })}
+                    {paper.images.length === 0 && <Message msg={"loading"} />}
                 </>
             )}
             {errorType !== 0 && <Message msg={errorType} />}

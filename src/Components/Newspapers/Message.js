@@ -9,6 +9,7 @@ const Message = (props) => {
     else if (msg === "city404")
         message = "اس شہر کے لئیے یہ اخبار دستیاب نہیں ہے";
     else if (msg === "page404") message = "صفحہ نہیں ملا";
+    else if (msg === "mag404") message = "یہ میگزین دستیاب نہیں ہے";
     else if (msg === "loading") message = "انتظار کریں";
     else if (msg === "newsloading") message = "...خبریں لوڈ ہو رہی ہیں";
     else if (msg === "unavailable") message = "یہ اخبار فلحال دستیاب نہیں ہے";

@@ -1,10 +1,10 @@
 import React from "react";
-import ViewPaper from "../Newspapers/Main/ViewPaper";
-import ViewMagazine from "../Newspapers/Main/ViewMagazine";
-import Filter from "../Newspapers/Main/Filter";
-import MagList from "../Newspapers/Main/MagList";
-import PapersList from "../Newspapers/Main/PapersList";
-import CitiesList from "./Newspapers/Main/CitiesList";
+import ViewPaper from "../Newspapers/ViewPaper";
+import ViewMagazine from "../Newspapers/ViewMagazine";
+import Filter from "../Newspapers/Filter";
+import MagList from "../Newspapers/MagList";
+import PapersList from "../Newspapers/PapersList";
+import CitiesList from "./Newspapers/CitiesList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Routing = (props) => {

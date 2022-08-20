@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Message from "../../Newspapers/Main/Message";
+import Message from "../../Newspapers/Message";
 import News from "./News";
 
 const GetNews = (props) => {
