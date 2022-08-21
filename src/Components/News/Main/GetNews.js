@@ -20,7 +20,7 @@ const GetNews = (props) => {
                 let data = JSON.parse(newsSaved);
                 if (mounted.current) setNews(data);
             } catch {
-                setNews([]);
+                setNews(["test"]);
             }
 
             if (mounted.current) {
