@@ -1,5 +1,5 @@
-const cacheName = "urdu-news-cache-v5";
-const precacheResources = ["/"];
+const cacheName = "urdunews-cache-1";
+const precacheResources = [];
 
 self.addEventListener("install", (event) => {
     console.log("Service worker installed!");
