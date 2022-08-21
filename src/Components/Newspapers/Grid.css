@@ -84,7 +84,11 @@
 
 .date p {
     width: 200px;
-}
+} 
+
+input, input:focus, input:active {
+    outline-color: transparent;
+    border-color: transparent;
 
 @media only screen and (max-device-width: 600px) {
 
@@ -102,19 +106,19 @@
         font-size: 16px;
     }
     .date {
-    margin-top: -30px !important;
+        margin-top: -30px !important;
         flex-direction: column;
         margin: 0;
         padding: 0;
     }
 
     .date div {
-        width: 87vw;
+        width: 95vw;
         display: flex;
-justify-content: space-between;
-align-items:center;
-padding: 5px;
-margin-bottom: 8px;
+        justify-content: space-between;
+        align-items:center;
+        padding: 5px;
+        margin-bottom: 8px;
     }
 }
 
