@@ -114,12 +114,14 @@ input, input:focus, input:active {
     }
 
     .date div {
-        width: 95vw;
+        width: 94vw;
         display: flex;
+        border-radius: 2px;
         justify-content: space-between;
         align-items:center;
-        padding: 5px;
+        padding: 7px;
         margin-bottom: 8px;
+
     }
 }
 
