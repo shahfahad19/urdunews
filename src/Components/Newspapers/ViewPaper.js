@@ -20,6 +20,22 @@ const ViewPaper = (props) => {
     const maxdate = `${year}-${month}-${day}`;
     let inDate = useRef(maxdate);
     const [date, setDate] = useState("");
+    const days = ["اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"];
+    const months = [
+        "جنوری",
+        "فروری",
+        "مارچ",
+        "اپریل",
+        "مئى",
+        "جون",
+        "جولائی",
+        "اگست",
+        "ستمبر",
+        "اکتوبر",
+        "نومبر",
+        "دسمبر"
+    ];
+    let urduDate = useRef("");
 
     useEffect(() => {
         mounted.current = true;
@@ -48,7 +64,7 @@ const ViewPaper = (props) => {
             cityIndex === -1 &&
             paperCities.length > 0
         ) {
-            errorType = "city404";
+            setError("city404");
         } else {
             setError(0);
             paperName = props.urduCities[paperIndex].name;
@@ -74,6 +90,13 @@ const ViewPaper = (props) => {
                     data = JSON.parse(data);
                     let d = data.date.split("-");
                     inDate.current = d[2] + "-" + d[1] + "-" + d[0];
+
+                    urduDate.current = {
+                        day: days[new Date(inDate.current).getDay()],
+                        date: d[0],
+                        month: months[parseInt(d[1])],
+                        year: d[2]
+                    };
                     setPaper(data);
                 }
             }
@@ -115,22 +138,38 @@ const ViewPaper = (props) => {
                 <>
                     {avail.length > 0 && (
                         <>
-                            <h3>
+                            <h3 className="paperName">
                                 {avail[0]} &nbsp;({avail[1]})
                             </h3>
                             {paper.images.length > 0 && (
-                                <div className="date">
-                                    Date:&nbsp;
-                                    <input
-                                        type="date"
-                                        max={maxdate}
-                                        value={inDate.current}
-                                        onChange={(event) => {
-                                            changeDate(event.target.value);
-                                            inDate.current = event.target.value;
-                                        }}
-                                    />
-                                </div>
+                                <>
+                                    <div className="date">
+                                        <p>&nbsp;</p>
+                                        <h4 className="urduDate">
+                                            <span>{urduDate.current.day}</span>،
+                                            <span>{urduDate.current.date}</span>
+                                            <span>
+                                                {urduDate.current.month}
+                                            </span>
+                                            <span>{urduDate.current.year}</span>
+                                        </h4>
+                                        <div>
+                                            Date:&nbsp;
+                                            <input
+                                                type="date"
+                                                max={maxdate}
+                                                value={inDate.current}
+                                                onChange={(event) => {
+                                                    changeDate(
+                                                        event.target.value
+                                                    );
+                                                    inDate.current =
+                                                        event.target.value;
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                </>
                             )}
                         </>
                     )}

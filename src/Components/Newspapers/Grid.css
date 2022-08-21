@@ -43,41 +43,80 @@
     text-align: center;
 }
 
-.paper-name h3 {
+.paper-name .paperName {
     display: inline-block;
     color: #0f0f0f;
 }
 
+.paperName,
+.urduDate {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    text-align: center;
+    color: "#0f0f0f"
+}
+
 .date {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0px 5px;
+}
+
+.date div {
     font-weight: bold;
     background-color: #0f0f0f;
-    margin: 0px 0px 10px 5px;
     border-radius: 3px;
     color: white;
     display: inline-block;
     padding: 5px 20px 5px 10px;
 }
 
-.date input {
+.date div input {
     font-weight: bold;
 }
 
-@media only screen and (max-device-width: 480px) {
-    .date {
-        display: flex;
-        justify-content: space-between;
-        margin: 5px 2px;
-        font-size: 14px;
-        align-items: center;
-        padding-left: 10px;
+.urduDate {
+    color: red;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    font-size: 18px;
+    align-items: center;
+}
+
+.date p {
+    width: 200px;
+}
+
+@media only screen and (max-device-width: 600px) {
+
+    .date p {
+        display: none;
     }
 }
 
-h3 {
-  font-family: 'Noto Nastaliq Urdu', serif;
-    text-align: center;
-    color: "#0f0f0f"
+
+@media only screen and (max-device-width: 480px) {
+    .urduDate {
+        font-size: 14px;
+    }
+    .paperName {
+        font-size: 16px;
+    }
+    .date {
+    margin-top: -30px !important;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .date div {
+        width: 88vw;
+    }
 }
+
+
 @media screen {
     
 }
