@@ -41,11 +41,8 @@
 
 .paper-name {
     text-align: center;
-}
-
-.paper-name .paperName {
-    display: inline-block;
     color: #0f0f0f;
+    font-family: 'Noto Nastaliq Urdu', serif;
 }
 
 .paperName,
@@ -112,7 +109,12 @@
     }
 
     .date div {
-        width: 88vw;
+        width: 87vw;
+        display: flex;
+justify-content: space-between;
+align-items:center;
+padding: 5px;
+margin-bottom: 8px;
     }
 }
 
