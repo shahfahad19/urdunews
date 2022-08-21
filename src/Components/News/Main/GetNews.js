@@ -4,9 +4,9 @@ import News from "./News";
 
 const GetNews = (props) => {
     const mounted = useRef(false);
-    const [news, setNews] = useState(["test"]);
+    const [news, setNews] = useState([]);
     const [updated, isUpdated] = useState(false);
-
+    const [load, setLoad] = useState(false);
     const type = props.type;
 
     useEffect(() => {
@@ -18,9 +18,11 @@ const GetNews = (props) => {
             try {
                 newsSaved = localStorage.getItem(type + "_urdunews");
                 let data = JSON.parse(newsSaved);
-                if (mounted.current) setNews(data);
+                if (mounted.current) {
+                    setNews(data);
+                    setLoad(true);
             } catch {
-                setNews(["test"]);
+                setNews([]);
             }
 
             if (mounted.current) {
@@ -31,6 +33,7 @@ const GetNews = (props) => {
                 if (newsSaved !== data && mounted.current) {
                     data = JSON.parse(data);
                     setNews(data);
+                    setLoad(true);
                     window.scrollTo(0, 0);
                 }
             }
@@ -58,7 +61,7 @@ const GetNews = (props) => {
 
     return (
         <div>
-            {mounted.current && news.length < 10 && (
+            {mounted.current && load && (
                 <Message msg="...خبریں لوڈ ہو رہی ہیں" />
             )}
             {!updated && (
