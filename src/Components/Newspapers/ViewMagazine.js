@@ -59,7 +59,7 @@ const ViewMagazine = (props) => {
                         urduDate.current = {
                             day: days[new Date(inDate.current).getDay()],
                             date: d[0],
-                            month: months[parseInt(d[1])],
+                            month: months[parseInt(d[1]) - 1],
                             year: d[2]
                         };
                         setPaper(data);
@@ -108,6 +108,7 @@ const ViewMagazine = (props) => {
                     {magname !== "" && (
                         <>
                             <h3
+                                className="paperName"
                                 style={{
                                     textAlign: "center",
                                     color: "#0f0f0f",

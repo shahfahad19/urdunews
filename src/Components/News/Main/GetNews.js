@@ -21,13 +21,14 @@ const GetNews = (props) => {
                 if (mounted.current) {
                     setNews(data);
                     setLoad(true);
+                }
             } catch {
-                setNews([]);
+                setNews(["News"]);
             }
 
             if (mounted.current) {
                 let data = await sendRequest(
-                    `https://urdunewsapi.vercel.app/news?cat=${type}&n=100`
+                    `https://urdunewsapi.vercel.app/news?cat=${type}&n=100&n=100`
                 );
                 localStorage.setItem(type + "_urdunews", data);
                 if (newsSaved !== data && mounted.current) {
@@ -53,7 +54,6 @@ const GetNews = (props) => {
             });
         }
         getNews();
-
         return () => {
             mounted.current = false;
         };
@@ -61,7 +61,7 @@ const GetNews = (props) => {
 
     return (
         <div>
-            {mounted.current && load && (
+            {mounted.current && !load && (
                 <Message msg="...خبریں لوڈ ہو رہی ہیں" />
             )}
             {!updated && (
@@ -69,9 +69,9 @@ const GetNews = (props) => {
                     <small> نئی خبریں لوڈ ہو رہی ہیں</small>
                 </center>
             )}
-            {news.length > 20 && news.map((news, index) => (
-                <News key={index} news={news} />
-            ))}
+            {mounted.current &&
+                news &&
+                news.map((news, index) => <News key={index} news={news} />)}
         </div>
     );
 };

@@ -6,7 +6,7 @@ import Image from "./Image";
 const ViewPaper = (props) => {
     const params = useParams();
     let mounted = useRef(false);
-    const [errorType, setError] = useState(0);
+    const [errorType, setError] = useState(1);
     const [avail, setAvail] = useState([]);
     const [paper, setPaper] = useState({ images: [] });
 
@@ -56,14 +56,9 @@ const ViewPaper = (props) => {
                 params.city;
         }
         let paperName, cityName;
-
         if (paperIndex === -1) {
             setError("paper404");
-        } else if (
-            paperIndex !== -1 &&
-            cityIndex === -1 &&
-            paperCities.length > 0
-        ) {
+        } else if (cityIndex === -1) {
             setError("city404");
         } else {
             setError(0);
@@ -94,7 +89,7 @@ const ViewPaper = (props) => {
                     urduDate.current = {
                         day: days[new Date(inDate.current).getDay()],
                         date: d[0],
-                        month: months[parseInt(d[1])],
+                        month: months[parseInt(d[1]) - 1],
                         year: d[2]
                     };
                     setPaper(data);
