@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./Image.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Message from "./Message";
 const Image = (props) => {
     const [notAvail, setNotAvail] = useState(false);
+    const [load, setLoad] = useState(false);
     let imgDisplay = "block";
     if (props.hide === "true") {
         imgDisplay = "none";
@@ -16,16 +17,28 @@ const Image = (props) => {
             setNotAvail(true);
         }
     }
+    let timer = parseInt(parseInt(props.page) + 1 + "000");
+    let loadImage = setTimeout(() => {
+        setLoad(true);
+    }, timer);
     return (
         <>
             {notAvail && <Message msg="unavailable" />}
-            <img
-                src={src}
-                loading="lazy"
-                onError={imgErrorHandler}
-                alt=""
-                style={{ display: display }}
-            />
+            {load && (
+                <LazyLoadImage
+                    src={src}
+                    effect="blur"
+                    style={{
+                        width: "98vw",
+                        minHeight: "70vw",
+
+                        height: "max-content",
+                        display: display,
+                        padding: "5px"
+                    }}
+                    onError={imgErrorHandler}
+                />
+            )}
         </>
     );
 };

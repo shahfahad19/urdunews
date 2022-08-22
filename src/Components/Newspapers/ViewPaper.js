@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import Message from "./Message";
 import Image from "./Image";
+import "./Grid.css";
 
 const ViewPaper = (props) => {
     const params = useParams();
@@ -171,7 +172,9 @@ const ViewPaper = (props) => {
 
                     {paper.images.length > 0 &&
                         paper.images.map((link, index) => {
-                            return <Image src={link} key={index} />;
+                            return (
+                                <Image src={link} key={index} page={index} />
+                            );
                         })}
                     {paper.images.length === 0 && <Message msg={"loading"} />}
                 </>

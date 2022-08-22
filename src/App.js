@@ -13,7 +13,7 @@ import Other from "./Components/News/Types/Other";
 import Regional from "./Components/News/Types/Regional";
 import International from "./Components/News/Types/International";
 import Message from "./Components/Newspapers/Message";
-import { Redirect } from "./Components/Main/Redirect";
+import { Redirect } from "./Components/Redirect";
 import { useEffect, useState } from "react";
 
 function App() {
