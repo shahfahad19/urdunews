@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import Message from "./Message";
 import Image from "./Image";
-import "./Grid.css";
+import "./Style.css";
 
 const ViewPaper = (props) => {
     const params = useParams();
@@ -135,7 +135,7 @@ const ViewPaper = (props) => {
                     {avail.length > 0 && (
                         <>
                             <h3 className="paperName">
-                                {avail[0]} &nbsp;({avail[1]})
+                                &nbsp;روزنامہ {avail[0]} &nbsp;({avail[1]})
                             </h3>
                             {paper.images.length > 0 && (
                                 <>

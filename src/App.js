@@ -18,7 +18,6 @@ import { useEffect, useState } from "react";
 
 function App() {
     const location = useLocation();
-
     const [data, setData] = useState({
         mags: [],
         papers: [],
@@ -65,7 +64,7 @@ function App() {
     }, []);
 
     return (
-        <div className="App">
+        <>
             <div className="logo">
                 <span className="urdu">اردو</span>
                 <span className="news"> نیوز</span>
@@ -226,7 +225,7 @@ function App() {
                     }
                 />
             </Routes>
-        </div>
+        </>
     );
 }
 

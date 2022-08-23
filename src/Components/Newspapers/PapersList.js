@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Grid.css";
+import "./Style.css";
 
 const PapersList = (props) => {
     return (

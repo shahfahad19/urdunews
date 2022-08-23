@@ -7,7 +7,10 @@
     text-align: center;
     margin-top: 10px;
     max-width: 500px;
+    margin-bottom: 50px;
 }
+
+
 
 .grid a {
     text-decoration: none;
@@ -15,7 +18,7 @@
     background-color: white;
     color: #0f0f0f;
     border: 2px solid #0f0f0f;
-    border-radius: 20px;
+    border-radius: 50px;
     transition: all .25s;
     font-family: 'Noto Nastaliq Urdu', serif;
 }
@@ -86,9 +89,19 @@
     width: 200px;
 } 
 
+@media only screen and (min-device-width: 750px) {
+    .grid {
+        grid-template-columns: repeat(3, 45%);
+    }
+
+    .grid a {
+        font-size: 18px;
+    }
+}
+
+
 
 @media only screen and (max-device-width: 600px) {
-
     .date p {
         display: none;
     }
@@ -108,7 +121,6 @@
         margin: 0;
         padding: 0;
     }
-
     .date div {
         width: 94vw;
         display: flex;
@@ -117,7 +129,29 @@
         align-items:center;
         padding: 7px;
         margin-bottom: 8px;
-
     }
 }
 
+input, input::before, input::after {
+    outline: 0;
+    border: 0;
+    padding: 3px;
+}
+
+
+
+::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-year-field {
+    color:red;
+}
+
+.msg h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    text-align: center;
+    font-weight: normal;
+    color: red;
+    font-family: 'Noto Nastaliq Urdu', serif;
+}

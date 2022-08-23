@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Grid.css";
 
 const MagList = (props) => {
     return (
@@ -13,7 +12,7 @@ const MagList = (props) => {
                                 key={index}
                                 to={name}
                                 state={{
-                                    magName: props.urdumaglist[index],
+                                    magName: props.urdumaglist[index]
                                 }}
                             >
                                 {props.urdumaglist[index]}

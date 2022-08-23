@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import Message from "./Message";
 import Image from "./Image";
+import "./Style.css";
 
 const ViewMagazine = (props) => {
     const mag = useParams().magname;
