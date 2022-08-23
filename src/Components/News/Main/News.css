@@ -50,3 +50,10 @@ p {
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.newscard span {
+    height: 80px!important;
+}
+
+.clicked span{
+    height: auto!important;
+}

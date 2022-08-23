@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Message from "../../Newspapers/Message";
 import News from "./News";
+import "./News.css";
 
 const GetNews = (props) => {
     const mounted = useRef(false);

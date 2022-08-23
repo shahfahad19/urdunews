@@ -9,9 +9,10 @@ const News = (props) => {
         height: "auto",
         headDisplay: "row-reverse",
         imgHeight: "80px",
-        imgWidth: "100px",
+        imgWidth: "120px",
         objectFit: "cover",
-        titleSize: "14px"
+        titleSize: "14px",
+        clicked: false
     };
     const [styles, setStyles] = useState(defaultStyles);
 
@@ -61,7 +62,8 @@ const News = (props) => {
                 imgHeight: "auto",
                 imgWidth: "100%",
                 objectFit: "contain",
-                titleSize: "16px"
+                titleSize: "16px",
+                clicked: true
             });
         }
     };
@@ -69,7 +71,7 @@ const News = (props) => {
         <>
             <Fade>
                 <div
-                    className="newscard"
+                    className={`newscard ${styles.clicked && "clicked"}`}
                     onClick={clickHandler}
                     style={{ height: styles.height }}
                 >
