@@ -89,15 +89,6 @@
     width: 200px;
 } 
 
-@media only screen and (min-device-width: 750px) {
-    .grid {
-        grid-template-columns: repeat(3, 45%);
-    }
-
-    .grid a {
-        font-size: 18px;
-    }
-}
 
 
 

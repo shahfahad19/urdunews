@@ -1,4 +1,5 @@
 import React from "react";
+import Swing from "react-reveal/Swing";
 
 const Message = (props) => {
     const msg = props.msg;
@@ -15,7 +16,9 @@ const Message = (props) => {
     else message = msg;
     return (
         <div className="msg">
-            <h3>{message}</h3>
+            <h3>
+                <Swing>{message}</Swing>
+            </h3>
         </div>
     );
 };

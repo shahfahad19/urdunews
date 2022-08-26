@@ -30,8 +30,7 @@ const Image = (props) => {
                     effect="blur"
                     style={{
                         width: "98vw",
-                        minHeight: "70vw",
-
+                        minHeight: "75vw",
                         height: "max-content",
                         display: display,
                         padding: "5px"

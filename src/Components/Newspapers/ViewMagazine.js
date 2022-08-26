@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import Message from "./Message";
 import Image from "./Image";
 import "./Style.css";
+import { Fade } from "react-reveal";
 
 const ViewMagazine = (props) => {
     const mag = useParams().magname;
