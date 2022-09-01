@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import Message from "./Message";
 const Image = (props) => {
     const [notAvail, setNotAvail] = useState(false);
@@ -17,10 +18,11 @@ const Image = (props) => {
             setNotAvail(true);
         }
     }
-    let timer = parseInt(parseInt(props.page) + 1 + "000");
+    let timer = parseInt(parseInt(props.page) + 1 + "000") / 2;
     let loadImage = setTimeout(() => {
         setLoad(true);
     }, timer);
+
     return (
         <>
             {notAvail && <Message msg="unavailable" />}
@@ -28,9 +30,10 @@ const Image = (props) => {
                 <LazyLoadImage
                     src={src}
                     effect="blur"
+                    threshold="250"
                     style={{
                         width: "98vw",
-                        minHeight: "75vw",
+                        minHeight: "70vw",
                         height: "max-content",
                         display: display,
                         padding: "5px"
