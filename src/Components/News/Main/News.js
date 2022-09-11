@@ -49,6 +49,8 @@ const News = (props) => {
     if (src === "ExpressNews") color = "#C5351A";
     if (src === "DunyaNews") color = "#425AD9";
     if (src === "SamaaNews") color = "#283786";
+    if (src === "KhaleejUrdu") color = "#2C5296";
+    if (src === "DW") color = "#002A5C";
 
     const clickHandler = () => {
         if (details) {
