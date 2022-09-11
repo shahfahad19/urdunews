@@ -51,6 +51,7 @@ const News = (props) => {
     if (src === "SamaaNews") color = "#283786";
     if (src === "KhaleejUrdu") color = "#2C5296";
     if (src === "DW") color = "#002A5C";
+    if (src === "IndependentUrdu") color = "#EE2031";
 
     const clickHandler = () => {
         if (details) {
