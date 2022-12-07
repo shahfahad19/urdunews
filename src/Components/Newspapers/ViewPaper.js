@@ -51,7 +51,7 @@ const ViewPaper = (props) => {
             paperCities = cities[paperIndex];
             cityIndex = paperCities.cities.indexOf(params.city);
             link =
-                "https://urdunewsapi.herokuapp.com/np/" +
+                "https://urdunewsapi.vercel.app/np/" +
                 cities[paperIndex].shortname +
                 "/" +
                 params.city;
@@ -71,7 +71,7 @@ const ViewPaper = (props) => {
             paperCities = cities[paperIndex];
             cityIndex = paperCities.cities.indexOf(params.city);
             link =
-                "https://urdunewsapi.herokuapp.com/np/" +
+                "https://urdunewsapi.vercel.app/np/" +
                 cities[paperIndex].shortname +
                 "/" +
                 params.city;
