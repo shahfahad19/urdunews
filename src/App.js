@@ -26,7 +26,7 @@ function App() {
         urduPapers: [],
         urduPapersList: []
     });
-    useEffect(() => {}, [location]);
+    useEffect(() => { }, [location]);
     useEffect(() => {
         async function getNews() {
             let getData = await sendRequest(
@@ -71,9 +71,6 @@ function App() {
             </div>
             {window.location.pathname !== "/" && (
                 <div className="top-menu">
-                    <NavLink to="/news" activeclassname="active">
-                        خبریں
-                    </NavLink>
                     <NavLink to="/newspapers" activeclassname="active">
                         اخبارات
                     </NavLink>
@@ -88,7 +85,7 @@ function App() {
                     path=""
                     element={
                         <>
-                            <Redirect to="news" />
+                            <Redirect to="newspapers" />
                         </>
                     }
                 />
