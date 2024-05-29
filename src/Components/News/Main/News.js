@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Fade } from "react-reveal";
 import "./News.css";
 const News = (props) => {
     const news = props.news;
@@ -72,71 +71,69 @@ const News = (props) => {
     };
     return (
         <>
-            <Fade>
+            <div
+                className={`newscard ${styles.clicked && "clicked"}`}
+                onClick={clickHandler}
+                style={{ height: styles.height }}
+            >
                 <div
-                    className={`newscard ${styles.clicked && "clicked"}`}
-                    onClick={clickHandler}
-                    style={{ height: styles.height }}
+                    className={`news-head`}
+                    style={{ flexDirection: styles.headDisplay }}
                 >
-                    <div
-                        className={`news-head`}
-                        style={{ flexDirection: styles.headDisplay }}
+                    <LazyLoadImage
+                        src={news.image}
+                        effect="blur"
+                        style={{
+                            height: styles.imgHeight,
+                            width: styles.imgWidth,
+                            objectFit: styles.objectFit
+                        }}
+                    />
+                    <p
+                        style={{
+                            marginRight: "10px",
+                            fontSize: styles.titleSize
+                        }}
                     >
-                        <LazyLoadImage
-                            src={news.image}
-                            effect="blur"
-                            style={{
-                                height: styles.imgHeight,
-                                width: styles.imgWidth,
-                                objectFit: styles.objectFit
-                            }}
-                        />
-                        <p
-                            style={{
-                                marginRight: "10px",
-                                fontSize: styles.titleSize
-                            }}
-                        >
-                            {news.title}
-                        </p>
-                    </div>
+                        {news.title}
+                    </p>
+                </div>
 
-                    <div className="info">
-                        <div className="info-time">
-                            <small>{time}</small>
-                            <small>{ind}</small>
-                        </div>
-                        <div className="info-source">
-                            <small style={{ backgroundColor: color }}>
-                                {news.source.replace("News", "")}
-                            </small>
-                        </div>
+                <div className="info">
+                    <div className="info-time">
+                        <small>{time}</small>
+                        <small>{ind}</small>
                     </div>
+                    <div className="info-source">
+                        <small style={{ backgroundColor: color }}>
+                            {news.source.replace("News", "")}
+                        </small>
+                    </div>
+                </div>
 
-                    {details && (
-                        <>
-                            {news.shortSummary.length > 30 && (
-                                <p
-                                    style={{
-                                        fontSize: "15px",
-                                        fontWeight: "bold"
-                                    }}
-                                >
-                                    {news.shortSummary}
-                                </p>
-                            )}
+                {details && (
+                    <>
+                        {news.shortSummary.length > 30 && (
                             <p
                                 style={{
-                                    fontSize: "14px",
-                                    margin: "0px 5px 0px 5px"
+                                    fontSize: "15px",
+                                    fontWeight: "bold"
                                 }}
                             >
-                                {news.summary}
+                                {news.shortSummary}
                             </p>
-                        </>
-                    )}
-                </div>
-            </Fade>
+                        )}
+                        <p
+                            style={{
+                                fontSize: "14px",
+                                margin: "0px 5px 0px 5px"
+                            }}
+                        >
+                            {news.summary}
+                        </p>
+                    </>
+                )}
+            </div>
         </>
     );
 };

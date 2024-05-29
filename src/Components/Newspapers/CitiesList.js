@@ -1,5 +1,4 @@
 import React from "react";
-import { Fade } from "react-reveal";
 import { useParams, Link } from "react-router-dom";
 import Message from "./Message";
 import "./Style.css";
@@ -10,7 +9,7 @@ const CitiesList = (props) => {
     const pos = props.data.papersList.indexOf(params.paper);
 
     return (
-        <Fade>
+        <>
             {pos === -1 ? (
                 <Message msg="paper404" />
             ) : (
@@ -29,7 +28,7 @@ const CitiesList = (props) => {
                     </div>
                 </center>
             )}
-        </Fade>
+        </>
     );
 };
 
